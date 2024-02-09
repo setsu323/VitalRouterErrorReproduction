@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VitalRouterErrorReproduction", "VitalRouterErrorReproduction.csproj", "{0d08bd81-0558-442a-28c2-048ecce46950}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0d08bd81-0558-442a-28c2-048ecce46950}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0d08bd81-0558-442a-28c2-048ecce46950}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
