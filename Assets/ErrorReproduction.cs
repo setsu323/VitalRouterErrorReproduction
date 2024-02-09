@@ -18,12 +18,10 @@ public partial class ErrorReproduction : MonoBehaviour
 
     private async void CallCommand()
     {
+        //This task will not be finished.
         _commandPublisher.PublishAsync(new OneSecondCommand()).Forget();
         await UniTask.NextFrame();
-        
-        //This will be expected to end after 30 seconds.
-        //But this process actually will end after 1 second.
-        _commandPublisher.PublishAsync(new ThirtySecondsCommand()).Forget();
+        _commandPublisher.PublishAsync(new ToSecondsCommand()).Forget();
     }
     
     public async UniTask On(OneSecondCommand command)
@@ -32,12 +30,12 @@ public partial class ErrorReproduction : MonoBehaviour
         await UniTask.Delay(TimeSpan.FromSeconds(1));
     }
     
-    public async UniTask On(ThirtySecondsCommand command)
+    public async UniTask On(ToSecondsCommand command)
     {
         //Slow process
-        await UniTask.Delay(TimeSpan.FromSeconds(30));
+        await UniTask.Delay(TimeSpan.FromSeconds(2));
     }
 }
 
 public struct OneSecondCommand : ICommand{}
-public struct ThirtySecondsCommand : ICommand{}
+public struct ToSecondsCommand : ICommand{}
